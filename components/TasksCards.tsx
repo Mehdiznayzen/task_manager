@@ -101,7 +101,7 @@ const TasksCards = () => {
                                             
                                             return (
                                                 !deleted && (
-                                                    <Card key={_id} className="w-[300px]">
+                                                    <Card key={_id} className="w-[340px]">
                                                         <CardHeader className="flex w-full">
                                                             <div className="flex items-center justify-between">
                                                                 <Button variant={'ghost'}>

@@ -125,7 +125,7 @@ const AddTaskForm = () => {
                         {
                             isLoading ? (
                                 <Button type="submit" className="flex items-center justify-center gap-[2px]">
-                                    <Loader className="w-4 h-4 animate-spin" />
+                                    <Loader className="w-4 h-4 animate-spin mr-2" />
                                     Loading ....
                                 </Button>
                             ) : (

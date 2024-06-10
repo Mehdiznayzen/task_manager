@@ -87,7 +87,7 @@ const FavoritesPage = () => {
                                                     <AlertDialogTrigger asChild>
                                                         <Button variant={'ghost'}>
                                                             <TooltipComponent
-                                                                text="Add To Favorites"
+                                                                text="Remove From Favorites"
                                                             >
                                                                 <FaStar 
                                                                     className="w-4 h-4"
@@ -98,9 +98,9 @@ const FavoritesPage = () => {
                                                     <AlertDialogContent>
                                                         <AlertDialogHeader className="flex items-start justify-start">
                                                             <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-                                                            <AlertDialogDescription>
-                                                                This action will permanently restore your
-                                                                task .
+                                                            <AlertDialogDescription className="text-start">
+                                                                This action will permanently remove your
+                                                                task from your favorite tasks .
                                                             </AlertDialogDescription>
                                                         </AlertDialogHeader>
                                                         <AlertDialogFooter>
