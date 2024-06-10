@@ -94,91 +94,93 @@ const TasksCards = () => {
                             />
                         ) : (
                             <>
-                                <TabsContent value="grid" className="grid grid-cols-4 gap-[50px]">
-                                    {
-                                        isTaskArray && tasks.map((task) => {
-                                            const { _creationTime, _id, task_name, description, image, favoris, deleted } = task
-                                            
-                                            return (
-                                                !deleted && (
-                                                    <Card key={_id} className="w-[340px]">
-                                                        <CardHeader className="flex w-full">
-                                                            <div className="flex items-center justify-between">
-                                                                <Button variant={'ghost'}>
-                                                                    <TooltipComponent
-                                                                        text="Add To Favorites"
+                                <TabsContent value="grid">
+                                    <div className="grid grid-cols-3">
+                                        {
+                                            isTaskArray && tasks.map((task) => {
+                                                const { _creationTime, _id, task_name, description, image, favoris, deleted } = task
+                                                
+                                                return (
+                                                    !deleted && (
+                                                        <Card key={_id} className="w-[340px]">
+                                                            <CardHeader className="flex w-full">
+                                                                <div className="flex items-center justify-between">
+                                                                    <Button variant={'ghost'}>
+                                                                        <TooltipComponent
+                                                                            text="Add To Favorites"
+                                                                        >
+                                                                            {
+                                                                                favoris ? (
+                                                                                    <FaStar 
+                                                                                        className="w-4 h-4"
+                                                                                    />
+                                                                                ) : (
+                                                                                    <FaRegStar 
+                                                                                        className="w-4 h-4" 
+                                                                                        onClick={() => handleAddToFavoris(_id)}
+                                                                                    />
+                                                                                )
+                                                                            }
+                                                                        </TooltipComponent>
+                                                                    </Button>
+                                                                    <Button 
+                                                                        variant="ghost"
                                                                     >
+                                                                        <TooltipComponent
+                                                                            text="Update Task"
+                                                                        >
+                                                                            <Dialog>
+                                                                                <DialogTrigger asChild>
+                                                                                    <Edit2 className="h-4 w-4" />
+                                                                                </DialogTrigger>
+                                                                                <DialogContent>
+                                                                                    <FormUpdateTask 
+                                                                                        _id={_id} 
+                                                                                    />
+                                                                                </DialogContent>
+                                                                            </Dialog>
+                                                                        </TooltipComponent>
+                                                                    </Button>
+                                                                    <Button 
+                                                                        variant="ghost"
+                                                                        onClick={() => handleAddToTrash(_id)}
+                                                                        className="flex items-center justify-center"
+                                                                    >
+                                                                        <TooltipComponent
+                                                                            text="Add To Trash"
+                                                                        >
+                                                                            <Trash className="h-4 w-4" />
+                                                                        </TooltipComponent>
+                                                                    </Button>
+                                                                </div>
+                                                            </CardHeader>
+                                                            <CardContent className="flex flex-col items-center justify-center gap-[4px]">
+                                                                <Image
+                                                                    src={image}
+                                                                    alt="task_image"
+                                                                    width={230}
+                                                                    height={230}
+                                                                    className="rounded-md"
+                                                                />
+                                                                <Label className="text-center text-[18px] text-muted-foreground">{task_name}</Label>
+                                                                <Label className="text-center text-[15px] text-gray-700">{description}</Label>
+                                                            </CardContent>
+                                                            <CardFooter className="flex justify-center">
+                                                                <div className="text-[15.5px] text-white flex items-center gap-[4px]">
+                                                                    <span>Add on </span>
+                                                                    <span className="">
                                                                         {
-                                                                            favoris ? (
-                                                                                <FaStar 
-                                                                                    className="w-4 h-4"
-                                                                                />
-                                                                            ) : (
-                                                                                <FaRegStar 
-                                                                                    className="w-4 h-4" 
-                                                                                    onClick={() => handleAddToFavoris(_id)}
-                                                                                />
-                                                                            )
+                                                                            formatRelative(new Date(_creationTime), new Date())
                                                                         }
-                                                                    </TooltipComponent>
-                                                                </Button>
-                                                                <Button 
-                                                                    variant="ghost"
-                                                                >
-                                                                    <TooltipComponent
-                                                                        text="Update Task"
-                                                                    >
-                                                                        <Dialog>
-                                                                            <DialogTrigger asChild>
-                                                                                <Edit2 className="h-4 w-4" />
-                                                                            </DialogTrigger>
-                                                                            <DialogContent>
-                                                                                <FormUpdateTask 
-                                                                                    _id={_id} 
-                                                                                />
-                                                                            </DialogContent>
-                                                                        </Dialog>
-                                                                    </TooltipComponent>
-                                                                </Button>
-                                                                <Button 
-                                                                    variant="ghost"
-                                                                    onClick={() => handleAddToTrash(_id)}
-                                                                    className="flex items-center justify-center"
-                                                                >
-                                                                    <TooltipComponent
-                                                                        text="Add To Trash"
-                                                                    >
-                                                                        <Trash className="h-4 w-4" />
-                                                                    </TooltipComponent>
-                                                                </Button>
-                                                            </div>
-                                                        </CardHeader>
-                                                        <CardContent className="flex flex-col items-center justify-center gap-[4px]">
-                                                            <Image
-                                                                src={image}
-                                                                alt="task_image"
-                                                                width={230}
-                                                                height={230}
-                                                                className="rounded-md"
-                                                            />
-                                                            <Label className="text-center text-[18px] text-muted-foreground">{task_name}</Label>
-                                                            <Label className="text-center text-[15px] text-gray-700">{description}</Label>
-                                                        </CardContent>
-                                                        <CardFooter className="flex justify-center">
-                                                            <div className="text-[15.5px] text-white flex items-center gap-[4px]">
-                                                                <span>Add on </span>
-                                                                <span className="">
-                                                                    {
-                                                                        formatRelative(new Date(_creationTime), new Date())
-                                                                    }
-                                                                </span>
-                                                            </div>
-                                                        </CardFooter>
-                                                    </Card>
+                                                                    </span>
+                                                                </div>
+                                                            </CardFooter>
+                                                        </Card>
+                                                    )
                                                 )
-                                            )
-                                        })
-                                    }
+                                            })
+                                        }
+                                    </div>
                                 </TabsContent>
 
                                 <TabsContent value="table" className="">
