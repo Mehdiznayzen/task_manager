@@ -71,7 +71,9 @@ const TrashPage = () => {
                         <div className="text-2xl">Loading your tasks ...</div>
                     </div>
                 ) : isTaskArray && tasks.length === 0 ? (
-                    <Placeholder />
+                    <Placeholder 
+                        showDescription={false}
+                    />
                 ) : (
                     <div className="grid grid-cols-4 gap-[50px]">
                         {

@@ -1,10 +1,8 @@
-const authConfig =  {
+export default {
     providers: [
         {
-            domain: "https://evolved-grouse-90.clerk.accounts.dev",
+            domain: "https://topical-mastodon-12.clerk.accounts.dev/",
             applicationID: "convex",
         },
     ]
 };
-
-export default authConfig

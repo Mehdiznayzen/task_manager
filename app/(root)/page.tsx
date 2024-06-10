@@ -33,7 +33,7 @@ const Home = () => {
           minute.
         </p>
 
-        <div className="flex items-center gap-[20px]">
+        <div className="flex items-center justify-center gap-[20px]">
           <SignedIn>
             <Link href={'/tasks'}>
               <Button variant={'default'}>Get Started</Button>
@@ -53,7 +53,6 @@ const Home = () => {
               </DialogContent>
             </Dialog>
           </SignedOut>
-          <Button variant={'ghost'} className="flex items-center gap-[10px]">Learn more <span>→</span></Button>
         </div>
       </main>
     </div>

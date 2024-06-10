@@ -25,7 +25,10 @@ export default function ConvexClientProvider({ children }: { children: React.Rea
                 baseTheme: customAppearance.baseTheme,
             }}
         >
-            <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
+            <ConvexProviderWithClerk 
+                client={convex} 
+                useAuth={useAuth}
+            >
                 {children}
             </ConvexProviderWithClerk>
         </ClerkProvider>

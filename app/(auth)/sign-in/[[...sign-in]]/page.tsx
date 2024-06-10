@@ -4,7 +4,6 @@ function SignUpPage() {
     return (
         <div className="App">
             <SignIn
-                signUpForceRedirectUrl={'/'}
             />
         </div>
     );

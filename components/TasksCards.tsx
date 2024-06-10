@@ -89,7 +89,9 @@ const TasksCards = () => {
                                 <div className="text-2xl">Loading your tasks ...</div>
                             </div>
                         ) : isTaskArray && tasks.length === 0 ? (
-                            <Placeholder />
+                            <Placeholder 
+                                showDescription={true}
+                            />
                         ) : (
                             <>
                                 <TabsContent value="grid" className="grid grid-cols-4 gap-[50px]">
