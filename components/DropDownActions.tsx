@@ -77,7 +77,7 @@ const DropDownActions = ({
                     </>
                 )}
                 <DropdownMenuItem onClick={type === 'trash' ? handleAddToTrash : handleDeleteTask}>
-                    <Trash className="h-4 w-4" />
+                    <Trash className="h-4 w-4 mr-2" />
                     <span>{typeDelete ? typeDelete : 'Add to Trash'}</span>
                 </DropdownMenuItem>
             </DropdownMenuContent>

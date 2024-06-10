@@ -152,12 +152,12 @@ const FormUpdateTask = ({ _id } : { _id : any }) => {
                         {
                             isLoading ? (
                                 <Button type="submit" className="flex items-center justify-center gap-[2px]">
-                                    <Loader className="w-4 h-4 animate-spin" />
-                                    Submitting ....
+                                    <Loader className="w-4 h-4 animate-spin mr-2" />
+                                    Updating ....
                                 </Button>
                             ) : (
                                 <Button type="submit" className="flex items-center gap-[2px] justify-center">
-                                    <Edit2 className="w-4 h-4"/>
+                                    <Edit2 className="w-4 h-4 mr-2"/>
                                     Update
                                 </Button>
                             )
