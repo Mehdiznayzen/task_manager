@@ -5,6 +5,7 @@ import ConvexClientProvider from "./ConvexProviderWithClerk";
 import ThemeProvider from "../providers/ThemeProvider";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/toaster";
+import "@uploadthing/react/styles.css";
 
 const inter = Roboto_Slab({ 
   subsets: ["latin"], 

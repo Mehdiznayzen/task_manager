@@ -16,7 +16,7 @@ const FileUpload = ({ onChange, value } : FileUploadProps) => {
 
     if(value && fileType !== 'image'){
         return (
-            <div className="relative h-40 flex items-center justify-center">
+            <div className="relative h-[220px] p-1 flex items-center justify-center">
                 <div className='flex items-center justify-center'>
                     <Image
                         src={value}
@@ -27,7 +27,7 @@ const FileUpload = ({ onChange, value } : FileUploadProps) => {
                     />
                     <Button
                         onClick={() => onChange('')} 
-                        className='bg-rose-500 text-white p-1 rounded-full absolute top-0 right-0 shadow-sm h-5 w-5' 
+                        className='bg-rose-500 text-white p-1 rounded-full absolute top-1 right-1 shadow-sm h-5 w-5' 
                         type='button'
                     >
                         <X />
